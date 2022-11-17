@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action = "aaa.jsp">
+    고객의 의견<br/>
+    <textarea style="resize: none;"></textarea>
+    
+    <select name = "cars">
+        <option value = "bmw"> BMW</option>
+        <option value = "benz">Benz</option>
+        <option value = "hyundai" selected>현대</option>
+        <option value = "kia">기아</option>
+        
+    </select>
+    <br/>
+    <fieldset>
+        <legend>인적사항</legend>
+
+        이름 <input type = "text"> <br/>
+    </fieldset>
+</form>>
+
+<form enctype="multipart/form-data">
+    <input type = "file" accept="image/jpg,image/gif">
+</form>
+<br/>
+<form>
+    전화번호:
+    <input type = "tel" name= "tel" required
+        pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
+        title="1234-1234-1234"><br/>
+    <input type = "submit" />
+</form>
+
+</body>
+</html>

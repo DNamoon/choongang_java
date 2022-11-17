@@ -1,0 +1,17 @@
+Student 클래스 작성 (JSP 책 p.448)
+
+**guestbook 데이터베이스에 student 테이블을 만드세요.(책 p446 참조)
+
+student테이블 만들어
+
+int id;
+String studentName;
+String password;
+int korScore;
+int mathScore;
+int engScore;
+String message; //학생 성적에 대한 평가, 도울 사항
+
+성적 입력이 가능해야 합니다.
+평균과 총점이 나와야 합니다.
+** 성적수정, 반평균과 석차도 나오도록 해보세요.

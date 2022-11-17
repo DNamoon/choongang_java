@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "myForm">
+        이&nbsp;&nbsp;&nbsp;&nbsp;름 <input type="text" name = "a0"><br/>
+        나&nbsp;&nbsp;&nbsp;&nbsp;이 <input type="text" name = "a1"><br/>
+        사는 곳 <input type="text" name = "a2"><br/>
+        <input type = "button" value="초기화2" onclick="init();">    
+    </form>
+    <br>
+    <form name = "myForm2">
+        이&nbsp;&nbsp;&nbsp;&nbsp;름2 <input type="text" name = "a0"><br/>
+        나&nbsp;&nbsp;&nbsp;&nbsp;이2 <input type="text" name = "a1"><br/>
+        사는 곳2 <input type="text" name = "a2"><br/>
+        <input type = "button" value="초기화3" onclick="init2('손님');">    
+    </form>
+
+    <script>
+        function init(){
+            document.myForm["a0"].value = "ex)홍길동";
+            document.myForm["a1"].value = "ex)20";
+            document.myForm["a2"].value = "ex)서울";
+        }
+      
+
+        function init2(x){
+        for(var i=0; i<3; i++){
+            document.myForm2["a"+i].value = x+(i+1);
+        }
+    }
+    var s = 'abc';
+    alert(s.lengt);
+    </script>
+
+
+
+</body>
+</html>
