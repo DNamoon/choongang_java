@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Lover</title>
+    
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#logo").click(function(){
+                location.replace('index.html');
+            });
+        });
+    </script>
+    <style>
+        div#index{
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div id="index">
+            <img src="movie_logo.PNG" id="logo" width="200" height="100" onclick="location.replace('index.html')"> Movie Lover
+        </div>
+            <button onclick="location.replace('login.html')">로그인</button>
+        <button onclick="location.replace('register.html')">회원가입</button>
+    </header>
+    <hr>
+    <nav>
+        <li><a href="search.html">영화검색</a></li>
+        <li><a href="contents.html">전체글 보기</a></li>
+        <li><a href="write.html">글 작성하기</a></li>
+    </nav>
+    <img src="main.jpg" width="60%" height="40%">
+</body>
+</html>

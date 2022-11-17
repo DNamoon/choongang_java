@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // $(document).ready(function(){
+        //     $("h2").click(function(){
+        //         $(this).hide();
+        //         console.log("사라진다");
+        //     });
+        // });
+        
+        $(document).ready(function(){
+            $(".c2").click(function(){
+                $(this).hide();
+                console.log("사라진다3. class=c2");
+            });
+        });
+        $(document).ready(function(){
+            $("#test").click(function(){
+                $(this).hide();
+                console.log("사라진다3. id=test");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#c3").click(function(){
+                $(this).text("바뀐다.");
+                console.log("바뀐다");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h2>클릭하면 사라집니다.</h2> 
+    <h2 class="c2">테스트1</h2>
+    <h2 id="test">테스트2</h2>
+    <h2 id="c3">테스트3</h2>
+</body>
+</html>

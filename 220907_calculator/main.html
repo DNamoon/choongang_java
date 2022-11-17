@@ -1,0 +1,123 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "java.sql.SQLException" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>웹 계산기</title>
+<style>
+    .calculatorForm1{
+        border: 3px solid #000000;
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+    /* .calculatorForm1 {
+        display: table-header-group;
+    } */
+    .calculatorTableRow {
+        display: table-row;
+     }
+     .cell
+     {
+        display: table-cell;
+        border: 1px solid #000000;
+        padding: 5px 4px;
+    }
+</style>
+
+</head>
+<body>
+
+
+<%
+	
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection conn = null;
+	Statement stmt = null;  
+	ResultSet rs = null;
+	
+	String jdbcDriver="jdbc:mysql://localhost:3306/guestbook?"+
+						"userUnicode=true&characterEncoding=utf8";
+	String dbUser="jspexam";
+	String dbPass="jsppw";
+	String query = "select * from calculator1" ;
+	
+	conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+	stmt = conn.createStatement();
+	
+	rs= stmt.executeQuery(query);
+	
+%>
+	<table border="1">
+		<tr>
+			<td>순서</td><td>계산식</td><td>계산결과</td>
+		</tr>
+		<% while(rs.next()){ 
+		%>
+		<tr>			
+			<td><%=rs.getInt("id")%></td>
+			<td><%=rs.getString("expression")%></td>
+			<td><%=rs.getString("result")%></td>
+		</tr>
+		
+	<% }%>
+	</table>
+
+</form>
+</body>
+<br/>
+
+<div>
+<form action = "expressionResult.jsp">
+계산식 : <input type="text" name="expression"/> <br/>
+결과 : <input type="text" name="result"/> <br/>
+<table class="calculatorForm" border=1>
+	<tr>
+		<td><b>%</b></td><td><b>C</b></td><td><b>Del</b></td><td><b>/</b></td>
+	</tr>
+	<tr>
+		<td>7</td><td>8</td><td>9</td><td>X</td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>-</td>
+	</tr>
+	<tr>
+		<td>3</td><td>2</td><td>1</td><td>+</td>
+	</tr>
+	<tr>
+		<td></td><td>0</td><td></td><td>=</td>
+	</tr>
+</table>
+<hr/>
+
+<div class="calculatorForm1">
+    <div class="calculatorTableRow">
+        <div class="firstLine" id="expression"></div>
+    </div>
+    <div class="calculatorTableRow">
+        <div class="firstLine" id="result"></div>
+    </div>
+    <div class="calculatorTableRow">
+        <div class="cell"><b>%</b></div>
+        <div class="cell"><b>C</b></div>
+        <div class="cell"><b>Del</b></div>
+        <div class="cell"><b>/</b></div>
+    </div>
+
+    
+	<div><b>%</b></div><div><b>C</b></div><div></div>
+
+</div>
+
+<input type="submit" value ="계산"/>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#image").attr("src","라인업.jpg")
+                console.log($("#image").attr("src"));
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn").prepend("<b style='color:red'>라인업 - </b>");
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn3").remove();
+        });
+    </script>
+
+</head>
+<body>
+    <img id="image" src="서울숲재즈페스티벌.png" width="600" height="800"/><br/>
+    <button id="btn">확인</button>
+    <button id="btn2">확인</button>
+    <button id="btn3">제거</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                //console.log("이벤트 확인");
+                $.ajax({
+                    url:"/input",
+                    data: "name="+$(".name").text()+"&text="+$(".text").text(),
+                    dataType: "text",
+                    success: function(data) {
+                        alert("입력성공!");
+                    },
+                    error: function(xhr, status, error) {
+                        alert(error);
+                    }
+                });
+            });      
+        });
+    </script>
+   
+</head>
+<body>
+
+<div id="quiz1">
+    <ul>
+        <li class="name">김사랑</li>
+        <li class="text">aJax로 하는중입니다.</li>
+    </ul>
+    <div id="res"></div>
+    <button id="btn">확인</button>
+</div>
+    
+</body>
+</html>
