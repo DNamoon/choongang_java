@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>listUser 페이지 / 사용자 목록</title>
+</head>
+<body>
+<ul>
+  <li th:each="dto : ${list}">
+    [[${dto.id}]]
+    [[${dto.name}]]
+    [[${dto.text}]]
+  </li>
+</ul>
+</body>
+
+</html>
