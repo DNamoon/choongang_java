@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>userlist</title>
+</head>
+<body>
+안녕하세요.
+<ul>
+    <li th:each="dto : ${user}">
+        [[${dto.id}]]
+        [[${dto.name}]]
+        [[${dto.text}]]
+
+    </li>
+</ul>
+
+</body>
+</html>
