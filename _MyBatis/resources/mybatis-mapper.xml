@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis">
+	<insert id = "insertEx3_2">
+		insert into ex3_2(emp_id, emp_name) values(1000,'홍달달')
+	</insert>
+	<select id = "selectName" parameterType = "int" resultType = "string">
+	    select emp_name from ex3_2 where emp_id = #{emp_id}
+	</select>
+	<select id = "selectId" parameterType = "String" resultType = "int">
+		select emp_id from ex3_2 where emp_name = #{emp_name}
+	</select>
+	<insert id="insertEx32" parameterType = "common.Emp">
+	    insert into ex3_2(emp_id, emp_name) values(#{employee_id}, #{first_name})
+	</insert> +
+	<select id="selectList" resultType = "common.Emp">
+	    select employee_id, first_name, salary from employees 
+	</select>
+	<select id="findName" parameterType = "int" resultType = "common.Emp">
+		select first_name, salary from employees where employee_id = #{employee_id}
+	</select>
+	    
+</mapper>

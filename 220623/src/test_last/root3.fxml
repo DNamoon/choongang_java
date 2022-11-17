@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test_last.EmpController">
+   <children>
+      <AnchorPane layoutX="-6.0" layoutY="3.0" prefHeight="241.0" prefWidth="273.0">
+         <children>
+            <Label fx:id="findData" layoutX="50.0" layoutY="53.0" text="검색" />
+            <Label layoutX="50.0" layoutY="90.0" text="사번" />
+            <Label layoutX="50.0" layoutY="127.0" text="이름" />
+            <Label layoutX="50.0" layoutY="162.0" text="월급" />
+            <TextField layoutX="106.0" layoutY="49.0" />
+            <TextField layoutX="106.0" layoutY="86.0" />
+            <TextField layoutX="106.0" layoutY="123.0" />
+            <TextField layoutX="106.0" layoutY="158.0" />
+            <Button fx:id="btn1" layoutX="109.0" layoutY="196.0" mnemonicParsing="false" text="Button" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
